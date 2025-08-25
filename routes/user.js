@@ -13,12 +13,12 @@ router.get('/signup', (req, res) => {
     res.render('users/signup');
 })
 
-// router.get("/", wrapAsync(async (req, res) => {
-//     const allListings = await Listing.find({})
-//     res.render("listings/index", {
-//         allListings
-//     })
-// }))
+router.get("/", wrapAsync(async (req, res) => {
+    const allListings = await Listing.find({})
+    res.render("listings/index", {
+        allListings
+    })
+}))
 
 router.post('/signup', wrapAsync(async (req, res) => {
     try {
