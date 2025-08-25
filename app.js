@@ -105,5 +105,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-    console.log('server is working on 8080')
+    console.log(`server is working on ${port}`)
 })
