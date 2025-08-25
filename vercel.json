@@ -7,15 +7,5 @@
       "routes": [{
         "src": "/(.*)",
         "dest": "index.js"
-      }],
-        "rewrites": [
-        {
-          "source": "/listings/:path*",
-          "destination": "/:path*"
-        },
-        {
-          "source": "/listings",
-          "destination": "/"
-        }
-      ]
+      }]
     }
