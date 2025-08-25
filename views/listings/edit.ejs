@@ -1,0 +1,46 @@
+<% layout('/layouts/boilerplate') %>
+
+
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
+            <h3>Edit your Listing</h3>
+            <form action="/listings/<%= listing._id %>?_method=put" method="POST" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="title" class="form-lable">Title</label>
+                    <input type="text" name="listing[title]" required value="<%=listing.title %>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-lable">Description</label>
+                    <textarea name="listing[description]" required class="form-control"
+                        rows="5"><%= listing.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-lable">Image URL</label>
+                    <input type="text" id="image" name="listing[image]" value="<%= listing.image %>"
+                        class="form-control">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-lable">Price</label>
+                        <input type="number" id="price" name="listing[price]" required value="<%= listing.price%>"
+                            class="form-control">
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-lable">Country</label>
+                        <input type="text" id="country" name="listing[country]" required value="<%= listing.country %>"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-lable">Location</label>
+                    <input type="text" id="location" name="listing[location]" class="form-control"
+                        value="<%= listing.location %>">
+                </div>
+
+                <button class="btn btn-dark add-btn">Add</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
