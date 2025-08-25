@@ -5,7 +5,17 @@
         "use": "@vercel/node"
       }],
       "routes": [{
-        "src": "/listings(.*)",
+        "src": "/(.*)",
         "dest": "index.js"
-      }]
+      }],
+        "rewrites": [
+        {
+          "source": "/listings/:path*",
+          "destination": "/:path*"
+        },
+        {
+          "source": "/listings",
+          "destination": "/"
+        }
+      ]
     }
